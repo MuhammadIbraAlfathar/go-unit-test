@@ -17,6 +17,20 @@ func TestMain(m *testing.M) {
 	fmt.Println("AFTER UNIT TEST")
 }
 
+func TestSubTest(t *testing.T) {
+	t.Run("Test 1", func(t *testing.T) {
+		result := HelloWorld("World")
+
+		assert.Equal(t, "Hello World", result, "Result mus be 'Hello World'")
+	})
+
+	t.Run("Test 2", func(t *testing.T) {
+		result := HelloWorld("World")
+
+		assert.Equal(t, "Hello World", result, "Result mus be 'Hello World'")
+	})
+}
+
 func TestHelloWorldAssert(t *testing.T) {
 	result := HelloWorld("World")
 
