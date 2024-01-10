@@ -1,12 +1,29 @@
 package helper
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestHelloWorld(t *testing.T) {
+func TestHelloWorldSAtu(t *testing.T) {
 	result := HelloWorld("World")
 
 	if result != "Hello World" {
 		// error
-		panic("Result is not 'Hello World' ")
+		t.Error("Result must be 'Hello World'")
 	}
+
+	fmt.Println("TestHelloWorldSatu done")
+
+}
+
+func TestHelloWorldDua(t *testing.T) {
+	result := HelloWorld("World")
+
+	if result != "Hello World" {
+		// error
+		t.Fatal("Result must be 'Hello World'")
+	}
+
+	fmt.Println("TestHelloWorldDua done")
 }
