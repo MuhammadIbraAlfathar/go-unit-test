@@ -3,9 +3,19 @@ package helper
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-func TestHelloWorldSAtu(t *testing.T) {
+func TestHelloWorldAssert(t *testing.T) {
+	result := HelloWorld("World")
+
+	assert.Equal(t, "Hello World", result, "Result mus be 'Hello World'")
+
+	fmt.Println("TestHelloWorldAssert is done")
+}
+
+func TestHelloWorldSatu(t *testing.T) {
 	result := HelloWorld("World")
 
 	if result != "Hello World" {
