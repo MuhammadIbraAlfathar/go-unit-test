@@ -7,15 +7,29 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestMain(m *testing.M) {
-	// before
-	fmt.Println("BEFORE UNIT TEST")
+// Benchmark
 
-	m.Run()
-
-	//after
-	fmt.Println("AFTER UNIT TEST")
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("ibra")
+	}
 }
+
+func BenchmarkHelloWorld2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Worlddd")
+	}
+}
+
+// func TestMain(m *testing.M) {
+// 	// before
+// 	fmt.Println("BEFORE UNIT TEST")
+
+// 	m.Run()
+
+// 	//after
+// 	fmt.Println("AFTER UNIT TEST")
+// }
 
 func TestSubTest(t *testing.T) {
 	t.Run("Test 1", func(t *testing.T) {
